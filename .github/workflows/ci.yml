@@ -2,7 +2,7 @@ name: MkDocs Build
 
 on:
   schedule:
-    - cron: "0 14  * *"
+    - cron: "0 14 * * *"
 
 jobs:
   deploy:
