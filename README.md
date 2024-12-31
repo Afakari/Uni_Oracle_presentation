@@ -15,10 +15,11 @@ This repository provides a comprehensive guide to Oracle Database, covering its 
 
 ## Examples
 
-- [SQL\*Plus Commands](examples/shell)
-- [Python Connection Script](examples/python)
-- [Docker container Setup](examples/oracle)
+- [SQL\*Plus Commands](examples/shell/README.md)
+- [Python Connection Script](examples/python/README.md)
+- [Docker container Setup](examples/oracle/README.md)
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or additions.
+
+

@@ -1,0 +1,24 @@
+site_name: Oracle Database Guide
+nav:
+  - Home: README.md
+  - Introduction: 01-introduction.md
+  - Architecture: 02-architecture.md
+  - Container Setup: 03-container-setup.md
+  - PL/SQL: 04-plsql.md
+  - Connecting to Oracle: 05-connecting-to-oracle.md
+  - Service Integration: 06-service-integration.md
+  - Advanced Services: 07-advanced-services.md
+  - Conclusion: 08-conclusion.md
+  - Examples:
+    - Python Connection Script: examples/python/
+    - Docker Container Setup: examples/oracle/
+    - SQL*Plus Commands: examples/shell/
+theme:
+  name: readthedocs
+  features:
+    - content.tabs
+    - content.code.annotate
+    - content.tooltips
+    - navigation.top
+    - navigation.expand
+    - navigation.full
