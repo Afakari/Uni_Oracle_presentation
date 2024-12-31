@@ -5,6 +5,7 @@ Oracle Database offers a suite of advanced services designed to ensure **data in
 ## **1. Flashback Technology**
 
 Flashback Technology provides a powerful mechanism to recover data from a previous point in time, enabling you to undo errors or analyze historical data without restoring from backups.
+![Flasback](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F3.bp.blogspot.com%2F-u-3oBkD-SNg%2FVy71QjJTjhI%2FAAAAAAAAKKk%2Fvw5tSqqbxfAnY6C2kuXOzHdnjFMkZ7fCgCLcB%2Fs400%2F10g%252BFlashback.png&f=1&nofb=1&ipt=5cbd59371c499bf3af14c107d52d565a0e74de8265c7736aeb472e7ed8ccdcd5&ipo=images)
 
 ### **Key Components:**
 
@@ -33,6 +34,7 @@ Flashback Technology provides a powerful mechanism to recover data from a previo
 ## **2. Oracle Recovery Manager (RMAN)**
 
 RMAN is Oracle’s robust backup and recovery tool, designed to simplify and automate the process of protecting your database.
+![RMAN](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi2.wp.com%2Fittutorial.org%2Fwp-content%2Fuploads%2F2013%2F10%2Frman-restore.gif%3Ffit%3D600%252C286%26ssl%3D1&f=1&nofb=1&ipt=a92a5529806731e319ee4dc7c9b3963259c770cda4cb2ce741b6050208a41997&ipo=images)
 
 ### **Key Features:**
 
@@ -66,6 +68,7 @@ RMAN is Oracle’s robust backup and recovery tool, designed to simplify and aut
 ## **3. Oracle Data Guard**
 
 Oracle Data Guard ensures **high availability** and **disaster recovery** by maintaining a synchronized standby database. It provides real-time data replication and automatic failover capabilities.
+![ODG](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdocs.oracle.com%2Fen%2Fdatabase%2Foracle%2Foracle-database%2F21%2Fdgbkr%2Fimg%2Fdgbkr008.png&f=1&nofb=1&ipt=1bcb6d8059791f00f6306a026bf1a5be1631c299766e5aa8a9be4e9e2a73ca70&ipo=images  )
 
 ### **Key Features:**
 

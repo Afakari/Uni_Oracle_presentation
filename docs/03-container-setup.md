@@ -11,6 +11,7 @@ PDBs are like **independent databases** within a single container. They have the
 - **Users:** Access controls and permissions.
 
 However, they share the **same Oracle instance** and **background processes**, making them lightweight and efficient.
+![PDB](https://onlineappsdba.com/wp-content/uploads/2016/03/Oracle_Database_MultiTenant_Architecture_PDB_CDB.png)
 
 ## **Benefits of Multitenant Architecture**
 
