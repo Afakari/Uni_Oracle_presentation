@@ -68,7 +68,7 @@ RMAN is Oracle’s robust backup and recovery tool, designed to simplify and aut
 ## **3. Oracle Data Guard**
 
 Oracle Data Guard ensures **high availability** and **disaster recovery** by maintaining a synchronized standby database. It provides real-time data replication and automatic failover capabilities.
-![ODG](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdocs.oracle.com%2Fen%2Fdatabase%2Foracle%2Foracle-database%2F21%2Fdgbkr%2Fimg%2Fdgbkr008.png&f=1&nofb=1&ipt=1bcb6d8059791f00f6306a026bf1a5be1631c299766e5aa8a9be4e9e2a73ca70&ipo=images  )
+![ODG](media/ODG.png)
 
 ### **Key Features:**
 

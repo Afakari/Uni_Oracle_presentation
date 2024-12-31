@@ -5,7 +5,7 @@ Oracle Database isn’t just a database—it’s a powerhouse that works hand-in
 ## **1. Oracle Application Express (APEX): Build Apps Fast**
 
 Think of APEX as your shortcut to building web apps without drowning in code. It’s perfect for creating tools, dashboards, or even customer-facing apps—all on top of Oracle Database.
-![ Apex Integration ](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.oracle.com%2Ftechnetwork%2Fdeveloper-tools%2Fapex%2Fapplication-express%2Fapex-architecture-3840624.jpg&f=1&nofb=1&ipt=214bc9a810f785ea6010106c02ff1746a7a6cc2c1ee4367f82a5968411cb66cb&ipo=images)
+![ Apex Integration ](media/Apex.jpg)
 
 ### **Strong points:**
 
@@ -22,7 +22,7 @@ Think of APEX as your shortcut to building web apps without drowning in code. It
 ## **2. Oracle Data Integrator (ODI): Easy data integrator**
 
 ODI is your go-to tool for moving data around—whether it’s from old systems, spreadsheets, or other databases. It’s like a data-moving ninja that keeps everything in sync.
-![ ODI Integration ](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi0.wp.com%2Fblogs.perficient.com%2Foracle%2Ffiles%2F2017%2F03%2Fodi_Blog_2_1.png%3Fresize%3D830%252C418%26ssl%3D1&f=1&nofb=1&ipt=012674b76162415fe80fcaae8de9e2e112cd79dd73e2ee0aa3186a9c4ce3fdc0&ipo=images)
+![ ODI Integration ](media/odi.png)
 
 ### **Strong points:**
 
@@ -38,7 +38,7 @@ ODI is your go-to tool for moving data around—whether it’s from old systems,
 
 ## **3. Oracle Analytics Server (OAS): Turn Data into Insights**
 
-![ OAS Integration ](Https://infohub.delltechnologies.com/static/media/9198938f-8c47-5a0e-82d9-6db6a62cd3f7/DAM-084ff6b3-d9be-4968-b900-f1822850ccb3/out/2689.006.png)
+![ OAS Integration ](media/oas.png)
 
 ### **Strong Points:**
 

@@ -29,7 +29,7 @@ Oracle’s memory is divided into two main areas:
 
 This separation ensures efficient resource utilization and prevents conflicts between users.
 
-![Oracle Architecture](https://www.oracletutorial.com/wp-content/uploads/2019/07/Oracle-Database-Architecture-database-instance.png)
+![Oracle Architecture](media/memory_arch.png)
 
 ## **3. Storage Structure**
 
@@ -41,14 +41,14 @@ Oracle uses a **logical** and **physical** storage structure to organize data:
 - **Segments:** Database objects like tables or indexes that consume storage.
 - **Extents:** Contiguous blocks of storage allocated to segments.
 - **Data Blocks:** The smallest unit of storage, typically 8KB in size.
-  ![Oracle Architecture](https://www.oracletutorial.com/wp-content/uploads/2015/12/Segments-Extents-and-Data-Blocks-Within-a-Tablespace.gif)
+  ![Oracle Architecture](media/segments_blocks.gif)
 
 ### **Physical Storage:**
 
 - **Data Files:** Store the actual data (e.g., tables, indexes).
 - **Control Files:** Contain metadata about the database, such as its name and file locations.
 - **Redo Log Files:** Record changes made to the database for recovery purposes.
-  ![Oracle Architecture](https://www.oracletutorial.com/wp-content/uploads/2015/12/logical-and-physical-storage.gif)
+  ![Oracle Architecture](media/logical_physical.gif)
 
 ---
 
