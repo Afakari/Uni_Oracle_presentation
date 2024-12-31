@@ -1,21 +1,19 @@
 name: MkDocs Build
 
 on:
-  schedule:
-    - cron: "0 14 * * *"
-
   push:
     branches:
       - main
 
 jobs:
-  deploy:
+  build:
+    name: Deploy docs
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
-      - name:
+      - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:  
-          GH_TOKEN: ${{ secrets.ORCALE_PAGE_ACTION }}
+          GITHUB_TOKEN: ${{ secrets.ORCALE_PAGE_ACTION }}i
