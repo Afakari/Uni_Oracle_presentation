@@ -1,0 +1,808 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../01-introduction/">
+      
+      
+        <link rel="next" href="../03-container-setup/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Architecture - Oracle Database Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#oracle-architecture-a-quick-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Oracle Database Guide" class="md-header__button md-logo" aria-label="Oracle Database Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Oracle Database Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Oracle Database Guide" class="md-nav__button md-logo" aria-label="Oracle Database Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Oracle Database Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-oracle-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Oracle Instance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Oracle Instance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Components:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-memory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Memory Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-storage-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Storage Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Storage Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logical-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical Storage:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physical Storage:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-does-this-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Does This Matter?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-analogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real-World Analogy
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-container-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Container Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-plsql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PL/SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-connecting-to-oracle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connecting to Oracle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-service-integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Service Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-advanced-services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced Services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-conclusion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python Connection Script
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/oracle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Container Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/shell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQL*Plus Commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-oracle-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Oracle Instance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Oracle Instance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Components:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-memory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Memory Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-storage-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Storage Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Storage Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logical-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical Storage:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physical Storage:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-does-this-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Does This Matter?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-analogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real-World Analogy
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="oracle-architecture-a-quick-guide">Oracle Architecture: A Quick Guide</h1>
+<p>Oracle Database architecture is designed to ensure <strong>high performance</strong>, <strong>scalability</strong>, and <strong>reliability</strong>. It’s a well-structured system that efficiently manages data through a combination of memory, processes, and storage. Here’s a simplified breakdown of its key components:</p>
+<hr />
+<h2 id="1-oracle-instance"><strong>1. Oracle Instance</strong></h2>
+<p>An Oracle instance is the gateway to the database. It consists of <strong>memory structures</strong> and <strong>background processes</strong> that work together to manage and access data. Think of it as the "engine" that keeps the database running.</p>
+<h3 id="key-components">Key Components:</h3>
+<ul>
+<li><strong>System Global Area (SGA):</strong> A shared memory region that stores data and control information.</li>
+<li><strong>Database Buffer Cache:</strong> Keeps frequently accessed data blocks in memory for faster retrieval.</li>
+<li><strong>Shared Pool:</strong> Stores SQL execution plans and metadata for efficient query processing.</li>
+<li><strong>Redo Log Buffer:</strong> Temporarily holds changes made to the database for recovery purposes.</li>
+<li><strong>Large Pool:</strong> Optional area for large operations like backups or parallel processing.</li>
+<li><strong>Program Global Area (PGA):</strong> Private memory for each server process, used for sorting, hashing, and other operations.</li>
+<li><strong>Background Processes:</strong> These handle essential tasks like writing data to disk (DBWn), logging changes (LGWR), and recovering the database (SMON).</li>
+</ul>
+<hr />
+<h2 id="2-memory-structure"><strong>2. Memory Structure</strong></h2>
+<p>Oracle’s memory is divided into two main areas:</p>
+<ul>
+<li><strong>SGA (System Global Area):</strong> Shared among all users and processes.</li>
+<li><strong>PGA (Program Global Area):</strong> Private to each user session.</li>
+</ul>
+<p>This separation ensures efficient resource utilization and prevents conflicts between users.</p>
+<p><img alt="Oracle Architecture" src="../media/memory_arch.png" /></p>
+<h2 id="3-storage-structure"><strong>3. Storage Structure</strong></h2>
+<p>Oracle uses a <strong>logical</strong> and <strong>physical</strong> storage structure to organize data:</p>
+<h3 id="logical-storage"><strong>Logical Storage:</strong></h3>
+<ul>
+<li><strong>Tablespaces:</strong> Logical containers that group related data (e.g., one tablespace for HR data, another for Finance).</li>
+<li><strong>Segments:</strong> Database objects like tables or indexes that consume storage.</li>
+<li><strong>Extents:</strong> Contiguous blocks of storage allocated to segments.</li>
+<li><strong>Data Blocks:</strong> The smallest unit of storage, typically 8KB in size.
+  <img alt="Oracle Architecture" src="../media/segments_blocks.gif" /></li>
+</ul>
+<h3 id="physical-storage"><strong>Physical Storage:</strong></h3>
+<ul>
+<li><strong>Data Files:</strong> Store the actual data (e.g., tables, indexes).</li>
+<li><strong>Control Files:</strong> Contain metadata about the database, such as its name and file locations.</li>
+<li><strong>Redo Log Files:</strong> Record changes made to the database for recovery purposes.
+  <img alt="Oracle Architecture" src="../media/logical_physical.gif" /></li>
+</ul>
+<hr />
+<h2 id="why-does-this-matter"><strong>Why Does This Matter?</strong></h2>
+<p>Oracle’s architecture is designed to:</p>
+<ul>
+<li><strong>Optimize Performance:</strong> By keeping frequently accessed data in memory (SGA) and minimizing disk I/O.</li>
+<li><strong>Ensure Reliability:</strong> Through features like redo logs and background processes that protect data integrity.</li>
+<li><strong>Scale Seamlessly:</strong> By allowing you to add more resources (memory, storage, processes) as your workload grows.</li>
+</ul>
+<hr />
+<h2 id="real-world-analogy"><strong>Real-World Analogy</strong></h2>
+<p>Think of Oracle’s architecture like a <strong>library</strong>:</p>
+<ul>
+<li><strong>SGA</strong> is the <strong>reading room</strong>, where popular books (data) are kept for quick access.</li>
+<li><strong>PGA</strong> is your <strong>personal desk</strong>, where you work on your tasks without disturbing others.</li>
+<li><strong>Tablespaces</strong> are the <strong>shelves</strong>, organizing books by category.</li>
+<li><strong>Data Files</strong> are the <strong>storage rooms</strong>, where all the books are kept when not in use.</li>
+<li><strong>Background Processes</strong> are the <strong>librarians</strong>, managing tasks like restocking shelves (writing data) and keeping records (logging changes).</li>
+<li><strong>Redo Logs</strong> are the <strong>backup tapes</strong>, ensuring that data can be recovered in case of need.</li>
+<li><strong>Control Files</strong> are the <strong>catalog</strong>, keeping track of all the books (database objects)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs", "content.code.annotate", "content.tooltips", "navigation.top", "navigation.expand", "navigation.full"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="../search/main.js"></script>
+      
+    
+  </body>
+</html>
