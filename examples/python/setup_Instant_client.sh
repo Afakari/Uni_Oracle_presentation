@@ -12,6 +12,7 @@ if [ ! -d "$INSTALL_DIR" ]; then
 fi
 
 
+mkdir -p "$START_DIR"
 cd $START_DIR
 
 for LINK in "${LINKS[@]}"; do
@@ -22,14 +23,15 @@ for FILE in *.zip; do
 	unzip "$FILE"
 done
 
-mv instantclient_12_2/* "$INSTALL_DIR"
+cd instantclient_12_2 
+mv ./* "$INSTALL_DIR"
 
 cd "$INSTALL_DIR"
 ln -s libclntsh.so.12.1 libclntsh.so
 ln -s libocci.so.12.1 libocci.so
 
-export ORACLE_HOME="$INSTALL_DIR/instantclient_12_2"
-echo "export ORACLE_HOME=$INSTALL_DIR/instantclient_12_2" >> ~/.bashrc
+export ORACLE_HOME="$INSTALL_DIR"
+echo "export ORACLE_HOME=$INSTALL_DIR" >> ~/.bashrc
 
 export LD_LIBRARY_PATH=$ORACLE_HOME:$LD_LIBRARY_PATH
 echo "export LD_LIBRARY_PATH=$ORACLE_HOME:$LD_LIBRARY_PATH" >> ~/.bashrc

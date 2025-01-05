@@ -34,7 +34,7 @@ class OracleHelper:
         try:
             with self.connection.cursor() as cursor:
                 self.logger.info(f"Executing query.")
-                cursor.execute(query,)
+                cursor.execute(query)
                 results = cursor.fetchall()
                 self.logger.info(f"Query executed successfully. Rows fetched: {len(results)}")
                 return results
