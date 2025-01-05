@@ -20,6 +20,4 @@ This repository provides a comprehensive guide to Oracle Database, covering its 
 - [Docker container Setup](examples/oracle/README.md)
 
 ## Contributing
-
-
-
+Feel free to open pull requests or contact me on telegram.
